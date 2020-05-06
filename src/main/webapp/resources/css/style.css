@@ -1,0 +1,518 @@
+
+
+.pt-3-half {
+    padding-top: 1.4rem;
+}
+
+.intro-2 {
+    background: url("https://mdbootstrap.com/img/Photos/Others/img (40).jpg")no-repeat center center;
+    background-size: cover;
+}
+
+.navbar {
+    background-color: transparent;
+}
+
+.top-nav-collapse {
+    background-color: #1e3385;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #1e3385;
+    }
+}
+
+.dtHorizontalVerticalExampleWrapper {
+    max-width: 600px;
+    margin: 0 auto;
+}
+#dtHorizontalVerticalExample th, td {
+    white-space: nowrap;
+}
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+    bottom: .5em;
+}
+
+.table-bonas{
+    border: solid gray 1px;
+    border-radius: 5px;
+    width: 100%;
+
+}
+.table-headas{
+    background-color: rgba(255, 255, 255, 0.44);
+    color: #f9f9f9;
+    height:40px;
+}
+.table-headas-txt{
+    margin: auto;
+    text-align: center;
+    font-size: 12px;
+
+}
+.tekstukas{
+    font-size: 10px;
+}
+
+.bodybakas{
+    background-image: url(background-buildings-2.jpg);
+}
+.menesioB{
+    background-color: #63bbff;
+}
+.menesioBtextas{
+    padding-bottom:3px;
+    font-size: 14px;
+    margin: 0px;
+    color: #ffffff;
+}
+.lentelesRow{
+    height: 20px !important;
+    background-color: rgba(255, 255, 255, 0.81);
+}
+.lentelesCell{
+    height:20px !important;
+    font-size: 12px;
+    text-align: center;
+}
+.btnstyle {
+    background: #a0adc1;
+    background-image: -webkit-linear-gradient(top, #a0adc1, #D0DAE9);
+    background-image: -moz-linear-gradient(top, #a0adc1, #D0DAE9);
+    background-image: -ms-linear-gradient(top, #a0adc1, #D0DAE9);
+    background-image: -o-linear-gradient(top, #a0adc1, #D0DAE9);
+    background-image: linear-gradient(to bottom, #a0adc1, #D0DAE9);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    color: #FFFFFF;
+    padding: 7px;
+    text-shadow: -2px 1px 4px #FFFFFF;
+    border: solid #a0adc1 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btnstyle:hover {
+    border: solid #FFFFFF 1px;
+    background: #D0DAE9;
+    background-image: -webkit-linear-gradient(top, #D0DAE9, #a0adc1);
+    background-image: -moz-linear-gradient(top, #D0DAE9, #a0adc1);
+    background-image: -ms-linear-gradient(top, #D0DAE9, #a0adc1);
+    background-image: -o-linear-gradient(top, #D0DAE9, #a0adc1);
+    background-image: linear-gradient(to bottom, #D0DAE9, #a0adc1);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+.table{
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+body{
+    background-color: rgb(63,72,83);
+    font-family: sans-serif;
+    color: rgb(220,220,220);
+    padding: 50px;
+    width: 100vw;
+    overflow-x: hidden;
+}
+h1{
+    font-weight: 400;
+}
+a{
+    color: inherit;
+}
+p{
+    margin-top: .7em;
+}
+.warning{
+    color: rgb(62,148,236);
+}
+.st_viewport{
+    right: 50px;
+    left: 50px;
+    top: 160px;
+    position: fixed;
+    bottom: 20px;
+    overflow: auto;
+}
+
+
+._menuo{
+    width: 5%;
+    text-align: center;
+
+}
+._ukis{
+    width: 20%;
+    text-align: center;
+}
+._menesiobiudzetas{
+    width: 15%;
+    text-align: center;
+}
+._menesioplanas{
+    width: 15%;
+    text-align: center;
+}
+._menesioaktavimas{
+    width: 15%;
+    text-align: center;
+}
+._uzaktuotasumafms{
+    width: 15%;
+    text-align: center;
+}
+._mygtukai{
+    width: 15%;
+}
+
+
+
+._ketvirtis{
+    width: 4%;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+}
+._objektopavadinimas{
+    width: 10%;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+}
+._sprendimobudas{
+    width: 11%;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+}
+._sprendimodata{
+    width: 8%;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+}
+._darbutipas{
+    width: 6%;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+}
+._darbupavadinimas{
+    width: 15%;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+}
+._preliminarikaina{
+    width: 6%;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+}
+._pagrindas{
+    width: 8%;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+}
+._rangovas{
+    width: 8%;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+}
+._tikslisuma{
+    width: 5%;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+}
+._atlikimodata{
+    width: 8%;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+}
+
+._ticketFMSid{
+    width: 4%;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+}
+._mygtukai2{
+    width: 160px;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+}
+
+
+
+._userid{
+    width: 5%;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+}
+._username{
+    width: 15%;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+}
+._vardas{
+    width: 10%;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+}
+._pavarde{
+    width: 10%;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+}
+._aktyvus{
+    width: 5%;
+    text-align: center;
+    border-bottom: #909193 1px solid;
+    font-size: 12px;
+}
+._role{
+    width: 10%;
+    text-align: center;
+    border-bottom: #909193 1px solid;
+    font-size: 12px;
+}
+._imone{
+    width: 35%;
+    text-align: center;
+    border-bottom: #909193 1px solid;
+    font-size: 12px;
+}
+._mygtukai3{
+    width: 10%;
+    text-align: center;
+    border-bottom: #909193 1px solid;
+    font-size: 12px;
+}
+
+
+
+
+
+
+pre{
+    overflow: auto;
+}
+
+/** Sticky table styles **/
+.st_viewport{
+    background-color: rgb(255, 255, 255);
+    color: rgb(27,30,36);
+    margin: 20px 0;
+}
+/* ###  Table wrap */
+.st_wrap_table{
+
+}
+/* ##   header */
+.st_table_header{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+    background-color: rgb(27,30,36);
+    color: rgb(220,220,220);
+}
+.st_table_header h2{
+    font-weight: 400;
+    margin: 0 20px;
+    padding: 20px 0 0;
+}
+.st_table_header .st_row{
+    color: rgb(255, 255, 255);
+}
+.st_table_header .st_column{
+
+}
+/* ##  table */
+.st_table{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+/* #   row */
+.st_row{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+}
+.st_row2{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+    height: auto;
+}
+.st_row3{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+    height: 30px;
+}
+.st_table .st_row:nth-child(even) .st_row2:nth-child(even){
+    background-color: rgba(0,0,0, .1)
+}
+/* #   column */
+.st_column{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+._colketvirciai{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.b_spalva{
+    color: #758c97;
+}
+.b_spalvak{
+    color: #dbcc69;
+}
+
+.formos-inputai{
+    border-bottom: solid 1px lightslategrey;
+    padding-top:3px;
+    padding-bottom: 3px;
+}
+.formos-inputai2{
+    border-bottom: solid 1px lightslategrey;
+    padding-top:3px;
+    padding-bottom: 3px;
+}
+
+.p_label{
+    padding:0;
+    margin: 0;
+    color: gray;
+}
+
+.modal-ku {
+    width: 750px;
+    margin: auto;
+}
+
+.not_filled{
+    background-color: orange;
+}
+
+.pardavimo_info{
+    margin-top: 30px;
+    background: #ffffff;
+    width: 100%;
+    display: inline-block;
+    box-shadow: 0 0 3px #ffffff;
+}
+.pardavimo_infoV1{
+    margin:1%;
+    width: 48%;
+    float: left;
+    color: black;
+
+}
+.pardavimo_infoV2{
+    margin:1%;
+    width: 48%;
+    float: left;
+    color: black;
+}
+
+.komentaru_skiltis{
+    margin-top:20px;
+    background: rgba(245, 245, 245, 0.70);
+    box-shadow: 0 0 3px #243555;
+}
+
+.komentaras{
+    margin: 10px;
+    margin-bottom: 0px;
+    padding: 5px;
+    background: #ffffff;
+    border-radius: 10px;
+    color: black;
+}
+.respone{
+    padding: 5px;
+    background: #eeeeee;
+    margin-left:50px;
+    margin-right: 50px;
+    border-top: solid whitesmoke 1px;
+    color: black;
+}
+.komentaru_footeris{
+    background: #243555;
+    width: 100%;
+    height: 40px;
+    margin-top:5px;
+
+}
+.attachment_skiltis{
+    margin-top: 20px;
+    width:100%;
+    box-shadow: 0 0 3px #243555;
+}
+.attachment_footeris{
+    width:100px;
+    height:50px;
+}
+.lentelesCellAtt{
+    height:20px !important;
+    font-size: 12px;
+    color: black;
+    text-align: center;
+}
+
+.logo_civ{
+    background-image: url(civinity_transparent_logo2.png);
+    margin:auto;
+    display: block;
+    height: 600px;
+    width: 800px;
+
+
+}
