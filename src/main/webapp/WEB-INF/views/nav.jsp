@@ -60,9 +60,15 @@
                 </div>
             </li>
 </sec:authorize>
-            <li class="nav-item" style="position: absolute;right:100px">
-                <a class="nav-link" href="#"><sec:authentication property="principal.username" /></a>
+            <li class="nav-item dropdown" style="position: absolute;right:100px">
+                <a class="nav-link dropdown-toggle" id="userDropdown" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false"><sec:authentication property="principal.username" /></a>
+                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="${contextPath}/chpu">Slaptažodžio keitimas</a>
+                </div>
             </li>
+
+
             <li class="nav-item" style="position: absolute;right:20px;width: 120px">
             <c:if test="${pageContext.request.userPrincipal.name != null}">
                 <form id="logoutForm" method="POST" action="${contextPath}/logout" style="position: absolute">
@@ -75,6 +81,8 @@
         </ul>
     </div>
     <!-- Collapsible content -->
+
+
 
 </nav>
 

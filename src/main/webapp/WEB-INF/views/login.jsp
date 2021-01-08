@@ -40,7 +40,7 @@
     <div class="container-login100" style="background-image: url('${contextPath}/resources/login/images/bg-01.jpg');">
         <div class="wrap-login100 p-t-30 p-b-50">
 				<span class="login100-form-title p-b-41">
-					CIVINITY
+					Jonas
 				</span>
             <form class="login100-form validate-form p-b-33 p-t-5" method="POST" action="${contextPath}/login">
                 <div class="ui-state-error-text" style="text-align: center;">${message}</div>

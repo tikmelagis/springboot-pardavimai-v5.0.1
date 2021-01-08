@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <html>
 <jsp:include page="linkai1.jsp" />
@@ -13,7 +14,18 @@
     <link rel="stylesheet" href="/resources/demos/style.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/style.css">
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+    <script>
+        // $( function() {
+        //     $("#rolikas").click(function () {
+        //         //atsiranda kai Role yra ROLE_USER (id = 2)
+        //         if ($(this).val() == 2) {
+        //             $('#dodo').show();
+        //         } else {
+        //             $('#dodo').hide();
+        //         }
+        //     });
+        // });
+    </script>
 </head>
 <body class="bodybakas">
 <jsp:include page="nav.jsp" />
@@ -35,7 +47,7 @@
                     <div class="st_column _username">Vartotojo vardas</div>
                     <div class="st_column _vardas">Vardas</div>
                     <div class="st_column _pavarde">Pavarde</div>
-                    <div class="st_column _aktyvus">Aktyvus</div>
+                <!--    <div class="st_column _aktyvus">Aktyvus</div> -->
                     <div class="st_column _role">Rolė</div>
                     <div class="st_column _imone">Įmonė</div>
                     <div class="st_column _mygtukai3"></div>
@@ -49,7 +61,7 @@
                             <div class="st_column _username">${us.username}</div>
                             <div class="st_column _vardas">${us.vardas}</div>
                             <div class="st_column _pavarde">${us.pavarde}</div>
-                            <div class="st_column _aktyvus">${us.active}</div>
+                        <!--    <div class="st_column _aktyvus">${us.active}</div> -->
                             <div class="st_column _role">
                                 <c:forEach items="${us.roles}" var="rol">
                                     ${rol.name}
@@ -61,14 +73,38 @@
                                 </c:forEach>
                             </div>
                             <div class="st_column _mygtukai3">
+
+
+                                <sec:authorize access="hasRole('SUPERUSER')">
+                                   <c:forEach items="${us.roles}" var="ro">
+                                    <c:choose>
+                                        <c:when test="${ ro.name eq 'ROLE_ADMIN' }">
+
+                                        </c:when>
+                                        <c:otherwise>
+                                            <c:if test="${us.unitas.stream().anyMatch(ele->vartotojas.unitas.contains(ele)).get()}">
+                                            <button onclick="location.href='?userid=${us.id}'" class="btn btn-blue-grey btn-sm" style="height:20px; width:40px;padding: 0;margin: 0;" >
+                                                <i class="far fa-edit"></i>
+                                            </button>
+                                            <button onclick="location.href='?userid=${us.id}&idtochange=${us.id}'" class="btn btn-blue-grey btn-sm" style="height:20px; width:40px;padding: 0;margin: 0;" >
+                                                <i class="fas fa-key"></i>
+                                            </button>
+                                            </c:if>
+                                        </c:otherwise>
+                                    </c:choose>
+                                   </c:forEach>
+                                </sec:authorize>
                                 <sec:authorize access="hasRole('ADMIN')">
+
                                     <button onclick="location.href='?userid=${us.id}'" class="btn btn-blue-grey btn-sm" style="height:20px; width:40px;padding: 0;margin: 0;" >
                                         <i class="far fa-edit"></i>
                                     </button>
                                     <button onclick="location.href='?userid=${us.id}&idtochange=${us.id}'" class="btn btn-blue-grey btn-sm" style="height:20px; width:40px;padding: 0;margin: 0;" >
                                         <i class="fas fa-key"></i>
                                     </button>
+
                                 </sec:authorize>
+
                             </div>
                         </div>
                     </c:forEach>
@@ -89,7 +125,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form:form method="post"  action="${contextPath}/users/addUser" modelAttribute="useris" >
+            <form:form method="post"  action="${contextPath}/users/addUser?status=${status}" modelAttribute="useris" >
                 <form:hidden path="id"></form:hidden>
 
                 <div class="modal-body mx-3">
@@ -97,12 +133,15 @@
                         <spring:bind path="username">
                             <div class="form-group ${status.error ? 'has-error' : ''}">
                             <form:input path="username" cssClass="form-control" type="text" required="required" placeholder="Username" autocomplete="off"/>
-                            <form:errors path="username"></form:errors>
-                                <c:if test="${not empty ereCreate.getFieldError('username')}">
-                                    <div class="ui-state-error-text">Toks vartotojas jau egzistuoja</div>
-                                </c:if>
+
+                                    <form:errors path="username"></form:errors>
+                                    <c:if test="${not empty ereCreate.getFieldError('username')}">
+                                        <div class="ui-state-error-text">Toks vartotojas jau egzistuoja</div>
+                                    </c:if>
                             </div>
                         </spring:bind>
+
+
                     </div>
 
                     <div class="md-form mb-sm-3">
@@ -150,7 +189,7 @@
                     <div class="md-form mb-sm-3">
                     <spring:bind path="roles">
                         <div class="form-group ${status.error ? 'has-error' : ''}">
-                            <form:select type="text" path="roles" class="form-control">
+                            <form:select type="text" path="roles" class="form-control" id="rolikas" >
 
                                 <form:options items="${rolesvisos}" itemValue="id" itemLabel="name"/>
 
@@ -158,16 +197,27 @@
 
                         </div>
 
+
                     </spring:bind>
                     </div>
                     <div class="md-form mb-sm-3">
                     <spring:bind path="unitas">
                         <div class="form-group ${status.error ? 'has-error' : ''}">
-                            <form:select multiple="multiple" type="text" path="unitas" class="form-control">
-                                <form:options items="${unitaivisi}" itemValue="id" itemLabel="name"/>
-                            </form:select>
+                            <div class="selectBox" >
+
+                            <c:forEach  items="${unitaivisi}" var="un">
+                                <c:if test="${vartotojas.unitas.stream().anyMatch(o -> o.equals(un)).get()}">
+                                <div style="display: block">
+                                <form:checkbox path="unitas" value="${un}" cssClass=""></form:checkbox>
+                                <h6 style="display: inline-block; margin-bottom: 0px;margin-top: 0px; margin-left: 20px; color: black">${un.name} </h6>
+                                </div>
+                                </c:if>
+                            </c:forEach>
+                            </div>
+
                         </div>
                     </spring:bind>
+
                     </div>
                 </div>
                 <div class="modal-footer d-flex justify-content-center">
@@ -207,8 +257,7 @@
                         <div class="md-form mb-sm-3">
                             <spring:bind path="passwordConfirm2">
                                 <div class="form-group ${status.error ? 'has-error' : ''}">
-                                    <form:input type="password" path="passwordConfirm2" class="form-control"
-                                                placeholder="Confirm your password"></form:input>
+                                    <form:input type="password" path="passwordConfirm2" class="form-control" placeholder="Confirm your password"></form:input>
                                     <form:errors path="passwordConfirm2"></form:errors>
                                     <c:if test="${not empty ere.getFieldError('passwordConfirm2')}">
                                         <div class="ui-state-error-text">Pakartotas slaptažodis nesutampa</div>
@@ -254,6 +303,7 @@
             $('#modalChangePass').modal('show');
         }
     });
+
 
 
 

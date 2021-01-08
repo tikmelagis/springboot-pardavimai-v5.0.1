@@ -76,6 +76,15 @@ table.dataTable thead .sorting_desc_disabled:before {
     margin: 0px;
     color: #ffffff;
 }
+.menesioBtextas2{
+    padding-bottom:0px;
+    font-size: 14px;
+    margin: 0px;
+    height:25px;
+    color: #ffffff;
+
+}
+
 .lentelesRow{
     height: 20px !important;
     background-color: rgba(255, 255, 255, 0.81);
@@ -192,84 +201,198 @@ p{
 
 ._ketvirtis{
     width: 4%;
+    min-width: 60px;
     text-align: center;
     font-size: 12px;
     border-bottom: #909193 1px solid;
 }
 ._objektopavadinimas{
     width: 10%;
+    min-width: 140px;
     text-align: center;
     font-size: 12px;
     border-bottom: #909193 1px solid;
+
 }
 ._sprendimobudas{
-    width: 11%;
+    width: 8%;
+    min-width: 100px;
     text-align: center;
     font-size: 12px;
     border-bottom: #909193 1px solid;
 }
 ._sprendimodata{
     width: 8%;
+    min-width: 90px;
     text-align: center;
     font-size: 12px;
     border-bottom: #909193 1px solid;
 }
 ._darbutipas{
-    width: 6%;
+    width: 8%;
+    min-width: 70px;
     text-align: center;
     font-size: 12px;
     border-bottom: #909193 1px solid;
 }
 ._darbupavadinimas{
     width: 15%;
+    min-width: 150px;
     text-align: center;
     font-size: 12px;
     border-bottom: #909193 1px solid;
 }
 ._preliminarikaina{
     width: 6%;
+    min-width: 70px;
     text-align: center;
     font-size: 12px;
     border-bottom: #909193 1px solid;
+    border-right: solid 1px #243555;
 }
 ._pagrindas{
     width: 8%;
+    min-width: 70px;
     text-align: center;
     font-size: 12px;
     border-bottom: #909193 1px solid;
 }
 ._rangovas{
     width: 8%;
+    min-width: 80px;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+}
+
+._sutartinesuma{
+    width: 5%;
+    min-width: 70px;
     text-align: center;
     font-size: 12px;
     border-bottom: #909193 1px solid;
 }
 ._tikslisuma{
-    width: 5%;
+    width: 70px;
+    min-width: 70px;
     text-align: center;
     font-size: 12px;
     border-bottom: #909193 1px solid;
 }
 ._atlikimodata{
-    width: 8%;
+    width: 70px;
+    min-width: 70px;
     text-align: center;
     font-size: 12px;
     border-bottom: #909193 1px solid;
 }
 
 ._ticketFMSid{
-    width: 4%;
+    width: 70px;
+    min-width: 70px;
     text-align: center;
     font-size: 12px;
     border-bottom: #909193 1px solid;
+    border-right: solid 1px #243555;
 }
+._tikslisuma2{
+    width: 70px;
+    min-width: 70px;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+    display: none;
+}
+._atlikimodata2 {
+    width: 70px;
+    min-width: 70px;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+    display: none;
+}
+
+._ticketFMSid2{
+    min-width: 70px;
+    width: 70px;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+    display: none;
+    border-right: solid 1px #243555;
+}
+
+._tikslisuma3{
+    min-width: 70px;
+    width: 70px;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+    display: none;
+}
+._atlikimodata3 {
+    min-width: 70px;
+    width: 70px;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+    display: none;
+}
+
+._ticketFMSid3{
+    min-width: 70px;
+    width: 70px;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+    display: none;
+    border-right: solid 1px #243555;
+
+}
+
+._tikslisuma4{
+    min-width: 70px;
+    width: 70px;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+    display: none;
+
+}
+._atlikimodata4{
+    min-width: 70px;
+    width: 70px;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+    display: none;
+}
+
+._ticketFMSid4{
+    min-width: 70px;
+    width: 70px;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: #909193 1px solid;
+    display: none;
+}
+
 ._mygtukai2{
+    min-width: 160px;
     width: 160px;
     text-align: center;
     font-size: 12px;
     border-bottom: #909193 1px solid;
 }
 
+.padalinta{
+padding-left:10px;
+}
+
+._padalinta{
+    width:30px;
+    border-bottom: #909193 1px solid;
+}
 
 
 ._userid{
@@ -379,6 +502,8 @@ pre{
     display: -ms-flexbox;
     display: flex;
     margin: 0;
+
+
 }
 .st_row2{
     display: -webkit-box;
@@ -396,6 +521,8 @@ pre{
     margin: 0;
     height: 30px;
 }
+
+
 .st_table .st_row:nth-child(even) .st_row2:nth-child(even){
     background-color: rgba(0,0,0, .1)
 }
@@ -407,6 +534,12 @@ pre{
 ._colketvirciai{
     padding-left: 20px;
     padding-right: 20px;
+}
+
+._colketvirciai2{
+    padding-left: 5px;
+    padding-right: 5px;
+
 }
 .b_spalva{
     color: #758c97;
@@ -515,4 +648,24 @@ pre{
     width: 800px;
 
 
+}
+
+.selectBox {
+    padding: 10px;
+    border: solid 1px gainsboro;
+}
+
+#SS2 , #PAD2, #FMS2 {
+   background-color: rgba(255, 155, 106, 0.44);
+}
+
+#SS3 , #PAD3, #FMS3 {
+    background-color: rgba(203, 255, 106, 0.44);
+}
+
+#SS4 , #PAD4, #FMS4 {
+    background-color: rgba(106, 166, 255, 0.44);
+}
+.dropbyusers{
+    background-color: #8e8e8e;
 }

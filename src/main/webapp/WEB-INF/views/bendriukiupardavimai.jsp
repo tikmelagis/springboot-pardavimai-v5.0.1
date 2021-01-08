@@ -14,6 +14,15 @@
     <link rel="stylesheet" href="/resources/demos/style.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/style.css">
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myuniqname').scrollTop(${scrolas.intValue()});
+        });
+
+
+
+    </script>
+
 
 </head>
 <body class="bodybakas">
@@ -38,7 +47,7 @@
 </div>
 
 <div>
-    <main class="st_viewport">
+    <main class="st_viewport" id="myuniqname">
 <c:forEach var="men" items="${menesiai}">
         <div class="st_wrap_table" data-table_id="${men.key}">
             <header class="st_table_header">
@@ -54,28 +63,69 @@
                 </div>
             </header>
             <div class="st_table">
-    <c:forEach items="${biudzetas}" var="biu">
+    <c:forEach items="${biudzetas}" var="biu" varStatus="loop" >
         <c:if test="${biu.menuo eq men.key}">
-                <div class="st_row3">
+
+                <div class="st_row3" >
                     <div class="st_column _menuo" >${biu.menuo}</div>
                     <div class="st_column _ukis">${biu.unit}</div>
                     <div class="st_column _menesiobiudzetas">${biu.menesioBiudzetas}</div>
-                    <div class="st_column _menesioplanas">${biu.menesioPardavimoPlanas}</div>
+                    <div class="st_column _menesioplanas " >${biu.menesioPardavimoPlanas}</div>
                     <div class="st_column _menesioaktavimas">${biu.menesioAktavimoSuma}</div>
                     <div class="st_column _uzaktuotasumafms">${biu.uzaktuotaSumaFMS}</div>
                     <div class="st_column _mygtukai">
                         <c:if test="${principal.contains(biu.unit)}">
-                            <button onclick="location.href='?metai1=${pasirinktiMetai}&menuo1=${biu.menuo}&unitasName=${biu.unit}'" class="btn btn-blue-grey btn-sm" style="height:20px; width:40px;padding: 0;margin: 0;">
+                            <button onclick="location.href='?metai1=${pasirinktiMetai}&menuo1=${biu.menuo}&unitasName=${biu.unit}&scrolas='+$('#myuniqname').scrollTop()" class="btn btn-blue-grey btn-sm" style="height:20px; width:40px;padding: 0;margin: 0;">
                                 <i class="far fa-edit"></i>
+                            </button>
+                            <button onClick="reply_click(this.id)" class="btn btn-blue-grey btn-sm" style="height:20px; width:40px;padding: 0;margin: 0;" id="showHideButton_${loop.index}">
+                                <i class="fas fa-angle-down" id="icon_${loop.index}"></i>
                             </button>
                         </c:if>
                     </div>
                 </div>
+
+            <div id="data_${loop.index}" style="display: none" class="dropbyusers">
+                <c:forEach items="${biudzetasDarbuotojai}" var="biuD">
+                    <c:if test="${biu.unit eq biuD.businessUnit.name and biu.menuo eq biuD.menuo}">
+                    <div class="st_row3"  style="color: white; border-bottom: solid 1px #5c5c5c;" >
+                        <div class="st_column _menuo"></div>
+                        <div class="st_column _ukis"></div>
+                        <div class="st_column _menesiobiudzetas">${biuD.user.username}</div>
+                        <div class="st_column _menesioplanas">${biuD.planuojamaSuma}</div>
+                        <div class="st_column _menesioaktavimas">${biuD.aktavimoSuma}</div>
+                    </div>
+                    </c:if>
+                </c:forEach>
+            </div>
         </c:if>
     </c:forEach>
             </div>
+
         </div>
 </c:forEach>
+
+        <script>
+
+            function reply_click(clicked_id)
+            {
+
+                var rowId = clicked_id.split("_")[1];
+                    var rowData = document.getElementById('data_' + rowId);
+                    var iconData = document.getElementById('icon_'+ rowId);
+
+                    // do whatever you want with your row
+                    if (rowData.style.display !== 'none') {
+                        rowData.style.display = 'none';
+                        iconData.className = 'fas fa-angle-down';
+
+                    } else {
+                        rowData.style.display = 'block';
+                        iconData.className = 'fas fa-angle-up';
+                    }
+            }
+
+        </script>
     </main>
 </div>
 
@@ -85,12 +135,13 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header text-center">
-                <h4 class="modal-title w-100 font-weight-bold">Biudzetas</h4>
+                <h6 class="modal-title w-100 font-weight-bold"> ${unitas2.name} : ${menuo2} mėn.</h6>
+                <h4 class="modal-title w-100 font-weight-bold">Biudzetas </h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form:form method="post"  action="${contextPath}/admin/addUpdateBud?metai1=${metai2}&menuo1=${menuo2}&unitasName=${unitas2.name}" modelAttribute="addUpBud" >
+            <form:form method="post"  action="${contextPath}/admin/addUpdateBud?metai1=${metai2}&menuo1=${menuo2}&unitasName=${unitas2.name}&scrolas=${scrolas}" modelAttribute="addUpBud" >
                 <form:hidden path="id"></form:hidden>
                 <form:hidden path="metai"></form:hidden>
                 <form:hidden path="menuo"></form:hidden>
@@ -122,6 +173,9 @@
 <!-- Update END -->
 
 <script>
+
+
+
     $(document).ready(function () {
         $('#dtHorizontalVerticalExample').DataTable({
             "scrollX": true,
@@ -140,6 +194,7 @@
             $('#modalUpdate').modal('show');
         }
     });
+
 
 
 

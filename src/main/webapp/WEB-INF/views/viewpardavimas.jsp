@@ -31,6 +31,11 @@
         <h6><b>Sutartinė suma (tiksli):</b> ${pardavimas.sutartineSumaTiksli}</h6>
         <h6><b>Planuojama atlikimo data:</b> ${pardavimas.planuojamaAtlikimoData}</h6>
         <h6><b>FMS Ticket ID:</b> <a href="https://fms.civinity.lt/tickets/view/${pardavimas.ticketFMSid}">${pardavimas.ticketFMSid}</a></h6>
+<c:if test="${not empty pardavimas.planuojamaAtlikimoData2}">
+        <h6><b>Sutartinė suma (tiksli) (Dalinimas):</b> ${pardavimas.sutartineSumaTiksli2}</h6>
+        <h6><b>Planuojama atlikimo data (Dalinimas):</b> ${pardavimas.planuojamaAtlikimoData2}</h6>
+        <h6><b>FMS Ticket ID (Dalinimas):</b> <a href="https://fms.civinity.lt/tickets/view/${pardavimas.ticketFMSid2}">${pardavimas.ticketFMSid2}</a></h6>
+</c:if>
     </div>
 </div>
 
